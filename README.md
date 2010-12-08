@@ -12,7 +12,7 @@ Installing
   1. Put the app somewhere in your `PYTHONPATH`.
   2. Add `site_news` to `INSTALLED_APPS`.
   3. Set values for the necessary settings (see below).
-  4. Run a `./manage.py syncdb`.
+  4. Run a `./manage.py syncdb`. This should install a fixture (see Using).
 
 Settings
 --------
@@ -34,3 +34,47 @@ many sites.
 Along with these categories there are also three constants corresponding to 
 the weight of each of the categories in `site_news.constants`. These can be 
 used to set `MIN_SITE_NEWS_CATEGORY`. These can be ignored as well.
+
+The first thing you'll want to do is check out the categories to see if the 
+defaults meet your needs.
+
+Once you've done that, create a test news item on your development or staging 
+server and insert it into your project.
+
+You can do this one of two ways. The first is to simply use the included 
+template tag to generate all the necessary markup for you. In your template:
+
+    {% load site_news %}
+    <html>
+    <head>
+        <title>My Awesome Site</title>
+    </head>
+    <body>
+        {% site_news %}
+        <p>...</p>
+    </body>
+    </html>
+
+The second way to insert site news items is to use the included context 
+processor. Add `site_news.context_processors.site_news` to your 
+`TEMPLATE_CONTEXT_PROCESSORS` setting.
+
+Then, in your templates (assuming you are using a `RequestContext`) you 
+will have access to a variable called `site_news_items`. Iterating through 
+it will give you each valid and current news item. In your template:
+
+    <html>
+    <head>
+        <title>My Awesome Site</title>
+    </head>
+    <body>
+        {% for item in site_news_items %}
+            <div class="{{ item.category.css }}">
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.content }}</p>
+            </div>
+        {% empty %}
+            <p>No news today!</p>
+        {% endfor %}
+    </body>
+    </html>
