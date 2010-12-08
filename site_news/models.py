@@ -27,6 +27,7 @@ class SiteNewsItem(models.Model):
     category = models.ForeignKey(
         'SiteNewsCategory',
     )
+    objects = models.Manager()
     current_and_active = SiteNewsItemManager()
     
     class Meta:
