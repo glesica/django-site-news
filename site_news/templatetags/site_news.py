@@ -1,11 +1,9 @@
-from datetime import datetime
-
 from django import template
 from django.conf import settings
 
 from site_news.models import SiteNewsItem
 
-def site_news():
+def news_section():
     """
     Inserts the currently active news items into the page.
     """
@@ -20,4 +18,4 @@ def site_news():
     return {'items': items}
 
 register = template.Library()
-register.inclusion_tag('site_news/news.html')(site_news)
+register.inclusion_tag('site_news/news.html')(news_section)
