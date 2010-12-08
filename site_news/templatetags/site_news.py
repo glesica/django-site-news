@@ -1,8 +1,11 @@
 from django import template
 from django.conf import settings
 
-from site_news.models import SiteNewsItem
+from ..models import SiteNewsItem
 
+register = template.Library()
+
+@register.inclusion_tag('site_news/news.html')
 def news_section():
     """
     Inserts the currently active news items into the page.
@@ -17,5 +20,3 @@ def news_section():
     
     return {'items': items}
 
-register = template.Library()
-register.inclusion_tag('site_news/news.html')(news_section)
