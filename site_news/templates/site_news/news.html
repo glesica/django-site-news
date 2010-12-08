@@ -1,11 +1,7 @@
 {% if items %}
     <div class="site-news">
-        <ul>
-            {% for item in items %}
-                <li>
-                    {% include "site_news/item.html" %}
-                </li>
-            {% endfor %}
-        </ul>
+        {% for item in items %}
+            {% include "site_news/item.html" %}
+        {% endfor %}
     </div>
 {% endif %}
