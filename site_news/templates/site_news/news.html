@@ -1,0 +1,11 @@
+{% if items %}
+    <div class="site-news">
+        <ul>
+            {% for item in items %}
+                <li>
+                    {% include "site_news/item.html" %}
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+{% endif %}
