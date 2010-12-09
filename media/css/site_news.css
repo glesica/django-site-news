@@ -1,0 +1,43 @@
+/*******************************************************************************
+ Default CSS for Django-site-news app.
+ George Lesica <glesica@gmail.com>
+*******************************************************************************/
+
+.site-news {
+    
+}
+.site-news-item {
+    padding: 6px;
+    margin: 12px 0;
+    box-shadow: 1px 1px 2px #666666;
+    -moz-box-shadow: 1px 1px 2px #666666;
+    -webkit-box-shadow: 1px 1px 2px #666666;
+    /* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=45, Color='#666666')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=45, Color='#666666');
+}
+.site-news-info {
+    background: #d0eaff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#d0eaff), to(#a5d1f3));
+    background: -moz-linear-gradient(top,  #d0eaff,  #a5d1f3);
+    /* For IE */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d0eaff', endColorstr='#a5d1f3');
+}
+.site-news-changes {
+    background: #eafbc5;
+    background: -webkit-gradient(linear, left top, left bottom, from(#eafbc5), to(#cfe990));
+    background: -moz-linear-gradient(top,  #eafbc5,  #cfe990);
+    /* For IE */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eafbc5', endColorstr='#cfe990');
+}
+.site-news-downtime {
+    background: #ffbebe;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffbebe), to(#ffa0a0));
+    background: -moz-linear-gradient(top,  #ffbebe,  #ffa0a0);
+    /* For IE */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffbebe', endColorstr='#ffa0a0');
+}
+.site-news-title {
+    font-weight: bold;
+}
