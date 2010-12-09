@@ -10,7 +10,7 @@ used in conjunction with a blog (or something similar).
 Author
 ------
 George Lesica
-<glesica@gmail.com>
+(<glesica@gmail.com>)
 
 Installing
 ----------
