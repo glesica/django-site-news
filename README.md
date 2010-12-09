@@ -3,9 +3,14 @@ Django-site-news Readme
 Django-site-news is a small Django app for including site updates, status and
 other news on the front page (or anywhere, really) of a web site.
 
+It is not meant to replace a blog, it is just meant for small status updates 
+regarding the site that users need to see. In fact, ideally it would be 
+used in conjunction with a blog (or something similar).
+
 Author
 ------
-George Lesica <glesica@gmail.com>
+George Lesica
+<glesica@gmail.com>
 
 Installing
 ----------
@@ -13,6 +18,7 @@ Installing
   2. Add `site_news` to `INSTALLED_APPS`.
   3. Set values for the necessary settings (see below).
   4. Run a `./manage.py syncdb`. This should install a fixture (see Using).
+  5. Update your templates (see Using).
 
 Settings
 --------
@@ -50,7 +56,7 @@ template tag to generate all the necessary markup for you. In your template:
         <title>My Awesome Site</title>
     </head>
     <body>
-        {% site_news %}
+        {% news_section %}
         <p>...</p>
     </body>
     </html>
